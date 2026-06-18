@@ -1,0 +1,6 @@
+{
+  "name": "Cosmos Node Studio",
+  "description": "A polished, dark-themed node-based visual pipeline builder for generative media.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

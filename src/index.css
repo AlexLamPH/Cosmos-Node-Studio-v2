@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Keyframe mappings */
+  @keyframes slide-up {
+    0% { 
+      transform: translate(-50%, 30px); 
+      opacity: 0; 
+    }
+    100% { 
+      transform: translate(-50%, 0); 
+      opacity: 1; 
+    }
+  }
+  @keyframes fade {
+    0% { 
+      opacity: 0; 
+    }
+    100% { 
+      opacity: 1; 
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Custom animation bindings */
+  --animate-slide-up: slide-up 240ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  --animate-fade: fade 150ms ease-out forwards;
+  --animate-shimmer: shimmer 2s infinite linear;
+}
+
+/* Custom CSS overrides for nice glassy scrollbars & selections */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 8, 22, 0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 255, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 255, 0.5);
+}
+
+/* Custom styles for range slider glow handles */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #8b5cff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #8b5cff, 0 0 4px #8b5cff;
+  transition: transform 120ms ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.22);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid #8b5cff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #8b5cff, 0 0 4px #8b5cff;
+  transition: transform 120ms ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.22);
+}
+
+/* Hide defaults for form select focus states */
+select option {
+  background-color: #0d0a1c !important;
+  color: #e7e2f5 !important;
+}
